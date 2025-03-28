@@ -1,377 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFEKV670PZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HFEKV670PZ');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🖋️ WritePrompt | مرآة النص الداخلي</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(to bottom, #0a0a0a, #161616);
-      color: #efefef;
-    }
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 4vw;
-      background: #1a1a26;
-      border-radius: 20px;
-      box-shadow: 0 0 60px rgba(255, 0, 80, 0.08);
-    }
-    h1 {
-      text-align: center;
-      font-size: 2.6rem;
-      margin-bottom: 40px;
-      background: linear-gradient(135deg, #ff0055, #aa00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: 1px;
-    }
-    label {
-      display: block;
-      margin: 24px 0 8px;
-      font-weight: bold;
-      color: #ff0080;
-    }
-    textarea, select, input {
-      width: 100%;
-      padding: 16px;
-      border-radius: 16px;
-      border: none;
-      background-color: #2a2a3a;
-      color: #fff;
-      font-size: 1rem;
-      box-sizing: border-box;
-      transition: 0.2s ease;
-    }
-    textarea:focus, select:focus, input:focus {
-      outline: none;
-      box-shadow: 0 0 5px #ff0080;
-    }
-    button {
-      margin-top: 25px;
-      padding: 14px 28px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #ff0080, #7700ff);
-      color: black;
-      font-weight: bold;
-      font-size: 18px;
-      border: none;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-    button:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
-    }
-    .output {
-      margin-top: 50px;
-      background-color: #1c1c2e;
-      padding: 24px;
-      border-radius: 18px;
-      font-family: 'Courier New', monospace;
-      white-space: pre-wrap;
-      line-height: 1.8;
-      border-right: 5px solid #ff0080;
-      min-height: 140px;
-    }
-    .description {
-      font-size: 0.9rem;
-      margin: 6px 0 16px;
-      color: #bbb;
-      min-height: 24px;
-    }
-    select.selected {
-      background-color: #3a3a5a;
-      border: 1px solid #ff0080;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>🖋️ WritePrompt | مرآتك الصادقة للكتابة</h1>
-
-    <label>🧬 نوع الكتابة:</label>
-    <select id="typeSelect">
-      <option>بلا</option>
-      <option>نصوص وجودية غامقة</option>
-      <option>فضفضات فلسفية</option>
-      <option>مناجاة داخلية</option>
-      <option>صراع فكري</option>
-      <option>رسائل موجهة لشخص غائب</option>
-      <option>صراخ داخلي مكتوم</option>
-      <option>اعترافات مؤجلة</option>
-      <option>نصوص هدم وبناء فكري</option>
-      <option>كتابة استبطانية</option>
-      <option>مرايا مشروخة</option>
-      <option>مذكرات الأشياء</option>
-    </select>
-    <div class="description">اختَر طبيعة النص الذي تريد كتابته… هل هو حواري داخلي؟ سوداوي؟ رسالة؟</div>
-
-    <label>🔊 نبرة الشعور:</label>
-    <select id="toneSelect">
-      <option>بلا</option>
-      <option>صامت يصرخ</option>
-      <option>عاقل متألم</option>
-      <option>هجوم ساخر راقٍ</option>
-      <option>نبرة تشظٍ وجودي</option>
-      <option>مفكر في طور التشقق</option>
-      <option>حسم داخلي</option>
-      <option>صوت الحبر في الظلام</option>
-      <option>طفل يحاور نفسه الكبيرة</option>
-    </select>
-    <div class="description">اختر كيف تريد أن يُسمع صوتك الداخلي… صامت؟ ساخر؟ هادئ؟ ممزق؟</div>
-
-    <label>🧩 البنية النصية:</label>
-    <select id="structureSelect">
-      <option>بلا</option>
-      <option>نص عميق موحّد</option>
-      <option>تقطيع حر</option>
-      <option>تدفق فضفضي غير محدود</option>
-      <option>رسالة لذات أخرى</option>
-      <option>سرد بمفاصل شعورية</option>
-      <option>كتابة كأنها على الحافة</option>
-    </select>
-    <div class="description">حدّد شكل بنية النص: مقطع واحد؟ مجزّأ؟ شبيه برسالة؟</div>
-
-    <label>📘 درجة تلقي النص من القارئ:</label>
-    <select id="depthSelect">
-      <option>بلا</option>
-      <option>سطحي (يمر مرور الكرام)</option>
-      <option>بسيط (يُفهم من أول قراءة)</option>
-      <option>متوسط العمق (يحتاج تأمل بسيط)</option>
-      <option>عميق (يستدعي إعادة قراءة وتفكير)</option>
-      <option>جداً عميق (يتسلل من بين السطور)</option>
-      <option>وجودي/رمزي (يصعب تفسيره، يُشعر أكثر مما يُفهم)</option>
-    </select>
-    <div class="description">كيف تحب أن يستقبل القارئ نصّك؟ مباشر؟ تأملي؟ رمزي؟</div>
-
-    <label>🎭 التأثير العاطفي على القارئ:</label>
-    <select id="emotionSelect">
-      <option>بلا</option>
-      <option>🌿 أمل</option>
-      <option>💧 دموع</option>
-      <option>🌀 ضياع</option>
-      <option>⚡ قشعريرة</option>
-      <option>🔥 غضب هادئ</option>
-      <option>🕊️ طمأنينة</option>
-      <option>🎭 مأساة شعورية</option>
-      <option>✨ دهشة وتأمل</option>
-      <option>🪞 صمت داخلي</option>
-      <option>💔 انكسار ناعم</option>
-    </select>
-    <div class="description">ما الأثر العاطفي الذي تريد أن يتركه نصك؟ دموع؟ دهشة؟ هدوء؟</div>
-
-    <label>🧠 درجة التعقيد اللغوي:</label>
-<select id="complexitySelect">
-  <option>بلا</option>
-  <option>بسيط وواضح</option>
-  <option>متوسط وعميق</option>
-  <option>عالي جداً ويحتوي استعارات</option>
-  <option>غامض رمزي غير مباشر</option>
-</select>
-<div class="description">هل تريد نص سهل؟ أم نخبوي؟ أم مليء بالرموز والاستعارات؟</div>
-
-    <label>📏 الطول المطلوب:</label>
-<select id="lengthSelect">
-  <option>بلا</option>
-    <option>قصير جدا (50-100 كلمة)</option>
-  <option>قصير (100-150 كلمة)</option>
-  <option>متوسط (200-300 كلمة)</option>
-  <option>طويل (400-600 كلمة)</option>
-  <option>نص حر (بدون قيود)</option>
-</select>
-<div class="description">اختر عدد الكلمات أو الطول الذي تراه مناسبًا للنص الناتج.</div>
-
-<label>🎯 الجمهور المستهدف:</label>
-<select id="audienceSelect">
-  <option>بلا</option>
-  <option>بنت مراهقة عمرها 15-18</option>
-  <option>بنت شابة عمرها 19-25</option>
-  <option>بنت شابة عمرها - 26-30</option>
-  <option>شاب او بنت عمر 18-25</option>
-</select>
-<div class="description">حدد لمن توجه النص... شخص مثلك؟ شخص بسطحياته؟ أم قارئ عميق جدًا؟</div>
-
-    <label>🕵️‍♂️ شكل النص:</label>
-<div id="ShapeSelectContainer" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px;">
-  <label><input type="checkbox" name="shapeOption" value="حركات" /> حركات</label>
-  <label><input type="checkbox" name="shapeOption" value="فوارز وفواصل" /> فوارز وفواصل</label>
-  <label><input type="checkbox" name="shapeOption" value="نقاط داخل النص" /> نقاط داخل النص</label>
-  <label><input type="checkbox" name="shapeOption" value="تــــمـــــديـــــــد الحروف" /> تــــمـــــديـــــــد الحروف</label>
-  <label><input type="checkbox" name="shapeOption" value="لوحة فنية من اختيارك" /> لوحة فنية من اختيارك</label>
-</div>
-
-
-
-    <label>🚪 شكل نهاية النص:</label>
-<select id="endingSelect">
-  <option>بلا</option>
-  <option>نهاية مفتوحة/تأملية</option>
-  <option>نهاية قاطعة/مباشرة</option>
-  <option>نهاية رمزية/صورة شعرية</option>
-</select>
-
-
-    <label>🧪 تعليمات خاصة للأسلوب (اختياري):</label>
-<textarea id="styleNotes" placeholder="مثال: أريد استخدام تكرار لعبارات معينة... أريد كلمات تشبه صوت الضجيج... إلخ."></textarea>
-<div class="description">هل لديك أي طلبات لغوية أو أسلوبية خاصة؟</div>
-
-    <label>🪶 مشاعر تريد تضمينها:</label>
-    <input type="text" id="emotionText" placeholder="مثال: الرغبة في الاختفاء، التعب النبيل، تشويش داخلي..."/>
-
-    <label>🗝️ نوايا خلف النص:</label>
-    <textarea id="intentText" placeholder="هل تحاول أن تُظهر شيء؟ أم تُخفي؟ هل هو لك أم لمن يقرؤه؟"></textarea>
-
-    <button onclick="resetFields()">🔁 إعادة تعيين</button>
-    <button id="writeBtn" disabled>✨ اكتبني الآن</button>
-  <button id="copyBtn">📋 نسخ البرومبت</button>
-
-
-    <div class="output">🔘 هنا سينكشف النص حين ينطق الصمت</div>
-  </div>
-
-<script>
-
-function resetFields() {
-  const selects = document.querySelectorAll("select");
-  const inputs = document.querySelectorAll("input, textarea");
-
-  selects.forEach(sel => sel.selectedIndex = 0);
-  inputs.forEach(el => el.value = '');
-
-  // تفريغ الـ Checkboxes الخاصة بـ شكل النص
-  document.querySelectorAll('input[name="shapeOption"]').forEach(el => el.checked = false);
-
-  checkMinimumSelections();
-  updateSelectionHighlight();
-}
-
-function updateSelectionHighlight() {
-  const selects = document.querySelectorAll("select");
-
-  selects.forEach(sel => {
-    if (sel.value !== "بلا") {
-      sel.classList.add("selected");
-    } else {
-      sel.classList.remove("selected");
-    }
-  });
-
-  const shapeChecks = Array.from(document.querySelectorAll('input[name="shapeOption"]:checked'));
-  const shapeContainer = document.getElementById("ShapeSelectContainer");
-
-  if (shapeChecks.length) {
-    shapeContainer.classList.add("selected");
-  } else {
-    shapeContainer.classList.remove("selected");
-  }
-}
-
-
-function checkMinimumSelections() {
-  const selects = document.querySelectorAll("select");
-  let count = 0;
-
-  selects.forEach(sel => {
-    if (sel.value !== "بلا") count++;
-  });
-
-  const shapeChecks = Array.from(document.querySelectorAll('input[name="shapeOption"]:checked'));
-  if (shapeChecks.length) count++;
-
-
-
-  const btn = document.getElementById("writeBtn");
-  btn.disabled = count < 2;
-  btn.style.opacity = count < 2 ? "0.5" : "1";
-  btn.style.cursor = count < 2 ? "not-allowed" : "pointer";
-}
-
-function generatePrompt() {
-  const type = document.getElementById("typeSelect").value;
-  const tone = document.getElementById("toneSelect").value;
-  const structure = document.getElementById("structureSelect").value;
-  const depth = document.getElementById("depthSelect").value;
-  const emotion = document.getElementById("emotionSelect").value;
-  const extraEmotion = document.getElementById("emotionText").value;
-  const intent = document.getElementById("intentText").value;
-  const complexity = document.getElementById("complexitySelect").value;
-  const length = document.getElementById("lengthSelect").value;
-  const audience = document.getElementById("audienceSelect").value;
-  const ending = document.getElementById("endingSelect").value;
-  const styleNotes = document.getElementById("styleNotes").value;
-  const shapeChecks = Array.from(document.querySelectorAll('input[name="shapeOption"]:checked')).map(el => el.value);
-
-  // ترتيب البرومبت
-  let prompt = `🖋️ *مرآة نص داخلي*\n\n`;
-  if (type !== "بلا") prompt += `✍️ نوع الكتابة: ${type}\n`;
-  if (tone !== "بلا") prompt += `🎙️ نبرة الشعور: ${tone}\n`;
-  if (structure !== "بلا") prompt += `📐 البنية النصية: ${structure}\n`;
-  if (depth !== "بلا") prompt += `🔍 عمق التلقي: ${depth}\n`;
-  if (emotion !== "بلا") prompt += `🎭 التأثير العاطفي: ${emotion}\n`;
-  if (extraEmotion.trim()) prompt += `💬 مشاعر إضافية: ${extraEmotion}\n`;
-  if (intent.trim()) prompt += `🗝️ النوايا خلف النص:\n${intent}\n`;
-  if (complexity !== "بلا") prompt += `🧠 درجة التعقيد اللغوي: ${complexity}\n`;
-  if (length !== "بلا") prompt += `📏 الطول المطلوب: ${length}\n`;
-  if (audience !== "بلا") prompt += `🎯 الجمهور المستهدف: ${audience}\n`;
-const allShapeCheckboxes = Array.from(document.querySelectorAll('input[name="shapeOption"]'));
-prompt += `🕵️‍♂️ شكل النص:\n`;
-
-allShapeCheckboxes.forEach(cb => {
-  if (cb.checked) {
-    prompt += `✅ ${cb.value}\n`;
-  } else {
-    prompt += `بلا ${cb.value}\n`;
-  }
-});
-  if (ending !== "بلا") prompt += `🚪 شكل نهاية النص: ${ending}\n`;
-  if (styleNotes.trim()) prompt += `🧪 تعليمات أسلوبية إضافية:\n${styleNotes}\n`;
-
-  prompt += `\n✧ المطلوب: توليد نص أدبي داخلي يحمل هذه الخصائص بدقة، ويُلامس شعور القارئ مباشرة.`;
-
-  document.querySelector('.output').textContent = prompt;
-}
-
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const selects = document.querySelectorAll("select");
-    selects.forEach(sel => {
-      sel.addEventListener("change", () => {
-        checkMinimumSelections();
-        updateSelectionHighlight();
-      });
-    });
-
-    document.getElementById("writeBtn").addEventListener("click", generatePrompt);
-
-    checkMinimumSelections();
-    updateSelectionHighlight();
-  });
-  // دالة نسخ البرومبت
-document.getElementById("copyBtn").addEventListener("click", () => {
-  const output = document.querySelector(".output").textContent;
-  if (!output.trim()) return alert("ماكو برومبت بعد للنسخ!");
-
-  navigator.clipboard.writeText(output).then(() => {
-    document.getElementById("copyBtn").textContent = "✅ تم النسخ!";
-    setTimeout(() => {
-      document.getElementById("copyBtn").textContent = "📋 نسخ البرومبت";
-    }, 1500);
-  });
-});
-
-</script>
-</body>
-</html>
