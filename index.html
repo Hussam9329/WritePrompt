@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>موقع خاص</title>
+  <script>
+    function checkPassword() {
+      const password = prompt("ادخل كلمة السر:");
+
+      // غيّر الكلمة هنا حسب رغبتك
+      if(password === "204871") {
+        // إذا الكلمة صح، ننتقل للموقع الأصلي
+        window.location.href = "real.html";
+      } else {
+        alert("كلمة السر غلط!");
+      }
+    }
+  </script>
+</head>
+<body onload="checkPassword()">
+  <h2 style="color:white; background:black; padding:20px;">جاري التحقق من كلمة السر...</h2>
+</body>
+</html>
